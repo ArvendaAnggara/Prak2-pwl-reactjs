@@ -1,16 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
+import './index.css';
 import App from './App';
-import Contact from './components/Contact'
-
+import reportWebVitals from './reportWebVitals';
+import ThemeContextProvider from './contexts/ThemeContext'
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 ReactDOM.render(
-    <Router>
-        <Routes>
-          <Route path='/' element={<App/>}/>
-          <Route path='/contact' element={<Contact/>}/>
-        </Routes>
-    </Router>,
+    <ThemeContextProvider>
+      <App />
+    </ThemeContextProvider>,
   document.getElementById('root')
 );
-
+reportWebVitals();
